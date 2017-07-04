@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello React</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app">
+      <!-- my app renders here -->
+    </div>
+    <script src="react.min.js"></script>
+    <script src="react-dom.min.js"></script>
+    <script src="browser.min.js"></script>
+    <script>
+      /*
+        The first parameter to h1() (which is null in this case) is an object that specifies any properties 
+        (think DOM attributes) that you want to pass to your component.
+
+        The second parameter (" Hello World!" in this example) defines a child of the component.
+        The simplest case is just a text child (a Text node in DOM-speak) as you see in the preceding code. 
+        But you can have as many nested children as you like and you pass them as additional function parameters.
+      */
+
+      ReactDOM.render(
+        React.DOM.h1(null, "Hello world!"),
+        document.getElementById("app")
+      );
+    </script>
+  </body>
+</html>
