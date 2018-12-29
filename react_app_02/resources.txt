@@ -1,4 +1,0 @@
-https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/
-https://facebook.github.io/react/docs/introducing-jsx.html
-http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html
-https://facebook.github.io/react/tutorial/tutorial.html
