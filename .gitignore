@@ -47,3 +47,4 @@ bundle
 # Yarn Integrity file
 .yarn-integrity
 
+reactApp/package-lock.json
