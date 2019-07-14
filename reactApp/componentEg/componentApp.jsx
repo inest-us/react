@@ -1,9 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class App extends React.Component {
-   constructor() {
-      super();
+   constructor(props) {
+      super(props);
       this.state = {
+         header: "Header from props...",
+         content: "Content from props...",
          data: 
          [
             {
@@ -27,7 +30,9 @@ class App extends React.Component {
    render() {
       return (
          <div>
-            <Header/>
+            <Header headerProp={this.state.header} />
+            <h3>Array: {this.props.propArray}</h3>
+            <h3>Bool: {this.props.propBool ? "True..." : "False..."}</h3>
             <table>
                <tbody>
                   {this.state.data.map((person, i) => <TableRow key = {i} 
@@ -42,7 +47,7 @@ class Header extends React.Component {
    render() {
       return (
          <div>
-            <h1>Header</h1>
+            <h1>{this.props.headerProp}</h1>
          </div>
       );
    }
@@ -56,6 +61,30 @@ class TableRow extends React.Component {
             <td>{this.props.data.age}</td>
          </tr>
       );
+   }
+}
+
+App.propTypes = {
+   propArray: PropTypes.array.isRequired,
+   propBool: PropTypes.bool.isRequired,
+   propFunc: PropTypes.func,
+   propNumber: PropTypes.number,
+   propString: PropTypes.string,
+   propObject: PropTypes.object
+}
+
+App.defaultProps = {
+   headerProp: "Header from props...",
+   contentProp: "Content from props...",
+   propArray: [1, 2, 3, 4, 5],
+   propBool: true,
+   propFunc: function(e) {
+      return e;
+   },
+   propNumber: 1,
+   propString: 'String value...',
+   propObject: {
+      name: 'value'
    }
 }
 export default App;
